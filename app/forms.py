@@ -62,4 +62,7 @@ class PostForm(FlaskForm):
     """Comment Form"""
     body = TextAreaField('body', validators=[DataRequired()])
     submit = SubmitField('Post Now')
+
+class ResetPasswordRequestForm(FlaskForm):
+    email = StringField('Email', validators= [DataRequired(), Length(1, 64), Email()])
     
